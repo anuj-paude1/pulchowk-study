@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nidan Sir</title>
+  <title>Autoplay Video with Sound</title>
   <style>
     #videoContainer {
       position: fixed;
@@ -22,7 +22,7 @@
 </head>
 <body>
   <div id="videoContainer">
-    <video id="myVideo" autoplay>
+    <video id="myVideo">
       <source src="" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -39,9 +39,13 @@
       // Set source based on device type
       source.src = videoSource;
 
-      // Load and autoplay video
+      // Load video
       video.load();
-      video.play();
+
+      // Wait for user interaction to start video playback
+      document.addEventListener('click', function() {
+        video.play();
+      });
     });
   </script>
 </body>
